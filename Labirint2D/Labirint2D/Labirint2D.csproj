@@ -55,6 +55,12 @@
     <Compile Include="FormLevel1.Designer.cs">
       <DependentUpon>FormLevel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLevel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLevel2.Designer.cs">
+      <DependentUpon>FormLevel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Sound.cs" />
     <EmbeddedResource Include="FormLevel1.resx">
       <DependentUpon>FormLevel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLevel2.resx">
+      <DependentUpon>FormLevel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

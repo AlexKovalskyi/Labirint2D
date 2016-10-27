@@ -37,7 +37,7 @@
 			// button_start
 			// 
 			this.button_start.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button_start.Location = new System.Drawing.Point(495, 509);
+			this.button_start.Location = new System.Drawing.Point(650, 509);
 			this.button_start.Name = "button_start";
 			this.button_start.Size = new System.Drawing.Size(113, 58);
 			this.button_start.TabIndex = 0;
@@ -48,7 +48,7 @@
 			// button_exit
 			// 
 			this.button_exit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button_exit.Location = new System.Drawing.Point(27, 40);
+			this.button_exit.Location = new System.Drawing.Point(650, 12);
 			this.button_exit.Name = "button_exit";
 			this.button_exit.Size = new System.Drawing.Size(113, 58);
 			this.button_exit.TabIndex = 1;
@@ -64,7 +64,7 @@
 			this.box_sound.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.box_sound.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.box_sound.ForeColor = System.Drawing.Color.Red;
-			this.box_sound.Location = new System.Drawing.Point(27, 547);
+			this.box_sound.Location = new System.Drawing.Point(472, 547);
 			this.box_sound.Name = "box_sound";
 			this.box_sound.Size = new System.Drawing.Size(88, 20);
 			this.box_sound.TabIndex = 2;

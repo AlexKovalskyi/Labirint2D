@@ -24,7 +24,7 @@ namespace Labirint2D
 
 		private void button_start_Click(object sender, EventArgs e)
 		{
-			start_level1();
+			StartLevel1();
 		}
 
 		private void box_sound_CheckedChanged(object sender, EventArgs e)
@@ -47,10 +47,29 @@ namespace Labirint2D
 			Application.Exit();
 		}
 
-		private void start_level1()
+		private void StartLevel1()
 		{
 			FormLevel1 level1 = new FormLevel1();
-			level1.ShowDialog();
+			DialogResult dr = level1.ShowDialog();
+			if (dr == DialogResult.OK)
+			{
+				StartLevel2();
+			}
+		}
+		private void StartLevel2()
+		{
+			FormLevel2 level2 = new FormLevel2();
+			DialogResult dr = level2.ShowDialog();
+			if (dr == DialogResult.OK)
+			{
+				StartYouWin();
+			}
+		}
+
+		private void StartYouWin()
+		{
+			Sound.play_youwin();
+			MessageBox.Show("You finished the game.");
 		}
 	}
 }

@@ -35,6 +35,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label_box2 = new System.Windows.Forms.Label();
+			this.label_box3 = new System.Windows.Forms.Label();
+			this.label_box1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label_start
@@ -69,6 +72,7 @@
 			this.label1.Size = new System.Drawing.Size(11, 533);
 			this.label1.TabIndex = 2;
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label1.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
 			// 
 			// label2
 			// 
@@ -79,6 +83,7 @@
 			this.label2.Size = new System.Drawing.Size(12, 533);
 			this.label2.TabIndex = 3;
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label2.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
 			// 
 			// label3
 			// 
@@ -89,6 +94,7 @@
 			this.label3.Size = new System.Drawing.Size(793, 15);
 			this.label3.TabIndex = 4;
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
 			// 
 			// label4
 			// 
@@ -99,6 +105,7 @@
 			this.label4.Size = new System.Drawing.Size(787, 15);
 			this.label4.TabIndex = 5;
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label4.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
 			// 
 			// label5
 			// 
@@ -109,6 +116,40 @@
 			this.label5.Size = new System.Drawing.Size(34, 374);
 			this.label5.TabIndex = 6;
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label5.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+			// 
+			// label_box2
+			// 
+			this.label_box2.BackColor = System.Drawing.Color.LimeGreen;
+			this.label_box2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_box2.Location = new System.Drawing.Point(108, 193);
+			this.label_box2.Name = "label_box2";
+			this.label_box2.Size = new System.Drawing.Size(26, 25);
+			this.label_box2.TabIndex = 7;
+			this.label_box2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label_box2.MouseEnter += new System.EventHandler(this.label_box2_MouseEnter);
+			// 
+			// label_box3
+			// 
+			this.label_box3.BackColor = System.Drawing.Color.LimeGreen;
+			this.label_box3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_box3.Location = new System.Drawing.Point(391, 310);
+			this.label_box3.Name = "label_box3";
+			this.label_box3.Size = new System.Drawing.Size(26, 25);
+			this.label_box3.TabIndex = 8;
+			this.label_box3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label_box3.MouseEnter += new System.EventHandler(this.label_box2_MouseEnter);
+			// 
+			// label_box1
+			// 
+			this.label_box1.BackColor = System.Drawing.Color.LimeGreen;
+			this.label_box1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_box1.Location = new System.Drawing.Point(17, 481);
+			this.label_box1.Name = "label_box1";
+			this.label_box1.Size = new System.Drawing.Size(26, 25);
+			this.label_box1.TabIndex = 9;
+			this.label_box1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label_box1.MouseEnter += new System.EventHandler(this.label_box2_MouseEnter);
 			// 
 			// FormLevel1
 			// 
@@ -116,6 +157,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(793, 533);
+			this.Controls.Add(this.label_box1);
+			this.Controls.Add(this.label_box3);
+			this.Controls.Add(this.label_box2);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -141,5 +185,8 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label_box2;
+		private System.Windows.Forms.Label label_box3;
+		private System.Windows.Forms.Label label_box1;
 	}
 }
