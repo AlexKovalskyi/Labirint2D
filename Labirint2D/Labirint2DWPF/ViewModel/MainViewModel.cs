@@ -1,21 +1,13 @@
 ﻿using System.Windows.Input;
 using Labirint2DWPF.Commands;
-using System.Collections.Generic;
-using System.Windows;
-using Labirint2DWPF.View.Levels;
 
 namespace Labirint2DWPF.ViewModel
 {
 	public class MainViewModel : MainViewModelBase 
 	{
-		private bool isSoundEnable = false;
+		private bool isSoundEnable = true;
 		private string soundOn = "Sound ON";
 		private string soundOff = "Sound Off";
-
-
-		public MainViewModel()
-		{
-		}
 
 		public bool IsSoundEnable
 		{
@@ -68,7 +60,7 @@ namespace Labirint2DWPF.ViewModel
 		{
 			get
 			{
-				return new StartCommand(Levels.windows[Levels.numberOfLevel]);
+				return new StartCommand();
 			}
 		}
 	}

@@ -3,21 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+		xmlns:cmd="gala"
         xmlns:local="clr-namespace:Labirint2DWPF.ViewModel"
         mc:Ignorable="d"
-        Title="Level1" Height="500" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Cursor="ScrollS">
+        Title="Level1" Height="500" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="ScrollS">
 	<Window.DataContext>
 		<local:Lvl1ViewModel/>
 	</Window.DataContext>
 	<Grid Background="#FF8BD495">
-		<Button x:Name="button" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="644" Height="12" Background="Red"/>
-		<Button x:Name="button_Copy" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="459" Margin="628,12,0,0" Background="Red"/>
-		<Button x:Name="button_Copy1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="644" Height="12" Margin="0,459,0,0" Background="Red"/>
-		<Button x:Name="button_Copy2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="459" Margin="0,12,0,0" Background="Red"/>
-		<Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="24" Margin="16,12,0,0" VerticalAlignment="Top" Width="43" Background="#FF95D845"/>
-		<Button x:Name="btnFinish" Content="Finish" Command="{Binding LevelFinished, Mode=OneWay}" HorizontalAlignment="Left" Height="24" Margin="586,435,0,0" VerticalAlignment="Top" Width="42" Background="#FF2566D8"/>
-		<Button x:Name="button2" Content="" HorizontalAlignment="Left" Height="298" Margin="298,82,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5" Background="Red">
+		<Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="24" Margin="15,14.667,0,0" VerticalAlignment="Top" Width="43" Background="#FF95D845" HorizontalContentAlignment="Center" UseLayoutRounding="False"/>
+		<Button x:Name="btnFinish" Content="Finish" HorizontalAlignment="Left" Height="24" Margin="577,422,0,0" VerticalAlignment="Top" Width="42" Background="#FF2566D8">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding LevelFinished}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
 		</Button>
+		<Button x:Name="wall" Content="" HorizontalAlignment="Left" Height="298" Margin="298,82,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5" Background="Red">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Border BorderBrush="Red" BorderThickness="15,15,25,25" Height="471" VerticalAlignment="Top" Width="644" HorizontalAlignment="Left">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Border>
 
 	</Grid>
 </Window>

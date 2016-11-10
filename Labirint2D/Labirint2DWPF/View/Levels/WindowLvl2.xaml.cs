@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Labirint2DWPF.View.Levels
 {
@@ -22,6 +14,9 @@ namespace Labirint2DWPF.View.Levels
 		public WindowLvl2()
 		{
 			InitializeComponent();
+
+			var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(Properties.Resources.key.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+			btnkey.Background = new ImageBrush(bitmapSource);
 		}
 	}
 }

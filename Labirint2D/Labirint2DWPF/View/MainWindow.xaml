@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labirint2DWPF.ViewModel"
         mc:Ignorable="d"
-        Title="Labirint2D" Height="500" Width="650" ResizeMode="NoResize" AutomationProperties.Name="MainWindov" WindowStartupLocation="Manual">
+        Title="Labirint2D" Height="500" Width="650" ResizeMode="NoResize" AutomationProperties.Name="MainWindov" WindowStartupLocation="CenterScreen">
 	<Window.DataContext>
 		<local:MainViewModel/>
 	</Window.DataContext>

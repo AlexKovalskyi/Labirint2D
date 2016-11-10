@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Labirint2DWPF.View;
+﻿using System.Windows;
 using Labirint2DWPF.ViewModel;
-using System.Windows.Input;
 using Labirint2DWPF.View.Levels;
 
 namespace Labirint2DWPF.Commands
@@ -16,18 +9,44 @@ namespace Labirint2DWPF.Commands
 		public override void Execute(object parameters)
 		{
 			var response = MessageBox.Show($"Level  Finished! Do you want to continue?", "Victory!!", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-			if (response == MessageBoxResult.Yes)
+			if (Levels.windows[Levels.numberOfLevel] is WindowLvl1)
 			{
-				Levels.numberOfLevel += 1;
-				WindowLvl2 lvl2 = (WindowLvl2)Levels.windows[Levels.numberOfLevel];
-				lvl2.Show();
-				//Point point = lvl2.btnStart.TransformToAncestor(lvl2).Transform(new Point(0, 0));
-				//point = lvl2.btnStart.PointToScreen(point);
-				//SetCursor((int)point.X, (int)point.Y);
+				if (response == MessageBoxResult.Yes)
+				{
+					Levels.lvl1.Close();
+					Levels.lvl2.Show();
+
+					Sound.play_start();
+					Point point = Levels.lvl2.btnStart.TransformToAncestor(Levels.lvl2).Transform(new Point(0, 0));
+					point = Levels.lvl2.btnStart.PointToScreen(point);
+					PointControll.SetCursor((int)point.X, (int)point.Y);
+					Levels.numberOfLevel += 1;
+				}
+				else
+				{
+					Application.Current.Shutdown();
+				}
 			}
-			else
+			else if(Levels.windows[Levels.numberOfLevel] is WindowLvl2)
 			{
-				Application.Current.Shutdown();
+				Sound.play_youwin();
+				if (response == MessageBoxResult.Yes)
+				{
+					MessageBox.Show($"Level {Levels.numberOfLevel +1} Finished! You Finished the game!  GOOD LUCK!!", "Victory!!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+					if (response == MessageBoxResult.OK)
+					{
+						Application.Current.Shutdown();
+					}
+					else
+					{
+						Application.Current.Shutdown();
+					}
+
+				}
+				else
+				{
+					Application.Current.Shutdown();
+				}
 			}
 		}
 	}

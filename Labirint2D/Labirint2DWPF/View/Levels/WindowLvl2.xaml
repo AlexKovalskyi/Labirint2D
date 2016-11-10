@@ -1,12 +1,60 @@
-﻿<Window x:Class="Labirint2DWPF.View.Levels.WindowLvl2"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Labirint2DWPF.View.Levels"
+        xmlns:local="clr-namespace:Labirint2DWPF.ViewModel"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+		x:Class="Labirint2DWPF.View.Levels.WindowLvl2"
         mc:Ignorable="d"
-        Title="WindowLvl2" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        Title="Level2" Height="500" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="ScrollS" Background="#FFC7FF0A">
+	<Window.DataContext>
+		<local:Lvl2ViewModel/>
+	</Window.DataContext>
+	<Grid>
+		<Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="24" Margin="15,14.667,0,0" VerticalAlignment="Top" Width="43" Background="White" HorizontalContentAlignment="Center" UseLayoutRounding="False"/>
+		<Button x:Name="btnkey" Content="" Visibility="{Binding GetKeyVisibl}" HorizontalAlignment="Left" Height="18" Margin="522,425,0,0" VerticalAlignment="Top" Width="21" HorizontalContentAlignment="Center" UseLayoutRounding="False" BorderBrush="{x:Null}" RenderTransformOrigin="0.286,-2.611">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding GetKey}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button x:Name="btndor" Content="Door" Visibility="{Binding GetKeyVisibl}" HorizontalAlignment="Left" Height="24" Margin="576,171,0,0" VerticalAlignment="Top" Width="43" Background="#FF00FF80" HorizontalContentAlignment="Center" UseLayoutRounding="False">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button x:Name="btnFinish" Content="Finish" HorizontalAlignment="Left" Height="24" Margin="577,422,0,0" VerticalAlignment="Top" Width="42" Background="#FF2566D8" UseLayoutRounding="False" VerticalContentAlignment="Center">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding LevelFinished}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button x:Name="wall" Content="" HorizontalAlignment="Left" Height="298" Margin="555,148,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5" Background="Red">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Border BorderBrush="Red" BorderThickness="15,15,25,25" Height="471" VerticalAlignment="Top" Width="644" HorizontalAlignment="Left" IsHitTestVisible="True" UseLayoutRounding="False">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter" >
+					<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+			<Button x:Name="wall_2" Content="" HorizontalAlignment="Left" Height="298" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5" Background="Red" Margin="475,133,0,0">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseEnter" >
+						<i:InvokeCommandAction Command="{Binding CrossBorder}" />
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+		</Border>
+
+	</Grid>
 </Window>

@@ -8,7 +8,7 @@ namespace Labirint2DWPF
 		static SoundPlayer soundKey = new SoundPlayer(Properties.Resources.sound_key);
 		static SoundPlayer soundStart = new SoundPlayer(Properties.Resources.sound_start);
 		static SoundPlayer soundYouWin = new SoundPlayer(Properties.Resources.sound_youwin);
-		static bool soundEnabled;
+		static bool soundEnabled = true;
 
 		public static void soundOn()
 		{
